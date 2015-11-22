@@ -1,0 +1,27 @@
+{
+  "name": "IsItSafe",
+  "authors": [
+    "Abdul Hannan Ali <abdulhannanali@outlook.com>"
+  ],
+  "description": "a small utility to check if a website is safe to visit",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "site",
+    "review",
+    "security",
+    "filter"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "bootstrap": "4"
+  }
+}
