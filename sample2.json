@@ -1,0 +1,13 @@
+{
+  "url": "http://www.youtube.com/",
+  "unrated": false,
+  "curtrackingid": 224236,
+  "locked": true,
+  "locked_message": "This Web page matches a list of high-profile URLs which are rated correctly and will not be rated differently, thus it cannot be submitted via this page.",
+  "locked_special_note": "",
+  "multiple": false,
+  "ratedate": "Last Time Rated/Reviewed:  > 7 days <img onmouseover='document.getElementById(\"dtsDiv\").style.display=\"block\";' onmouseout='document.getElementById(\"dtsDiv\").style.display=\"none\";'src='images/info24.gif' width=10 height=10></img><div id='dtsDiv' style='background-color: white; position:absolute; display:none'><table cellspacing=\"0\" cellpadding=\"4\" width=\"600\" style=\"border: 1px solid black;\"><thead><th  bgcolor=003366>&nbsp;</th></thead><tbody><tr><td class='bodytext'>The URL submitted for review was rated more than 7 days ago.  The default setting for Blue Coat SG clients to download rating changes is once a day.  There is no need to show ratings older than this.<br><br>Since Blue Coat&#39;s desktop client K9 and certain OEM partners update differently, ratings may differ from those of a Blue Coat SG as well as those present on the Site Review Tool.</td></tr></tbody></table></div>",
+  "categorization": "<a href=\"javascript:showPopupWindow('catdesc.jsp?catnum=84')\">Audio/Video Clips</a> and <a href=\"javascript:showPopupWindow('catdesc.jsp?catnum=50')\">Mixed Content/Potentially Adult</a>",
+  "threatrisklevel": "Low",
+  "linkable": true
+}

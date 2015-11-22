@@ -1,0 +1,11 @@
+{
+  "url": "http://twitter.com/",
+  "unrated": false,
+  "curtrackingid": 224190,
+  "locked": false,
+  "multiple": false,
+  "ratedate": "<img src='images/warning24.gif' height='12' width='12'></img> Last Time Rated/Reviewed:  November 19, 2015 22:21:09 GMT <img onmouseover='document.getElementById(\"dtsDiv\").style.display=\"block\";' onmouseout='document.getElementById(\"dtsDiv\").style.display=\"none\";'src='images/info24.gif' width=10 height=10></img><div id='dtsDiv' style='background-color: white; position:absolute; display:none'><table cellspacing=\"0\" cellpadding=\"4\" width=\"600\" style=\"border: 1px solid black;\"><thead><th  bgcolor=003366>&nbsp;</th></thead><tbody><tr><td class='bodytext'>It is important to note that new ratings or updates to existing ratings are part of a daily update cycle.  Blue Coat Systems builds the update files at midnight UTC.<br><br>Submissions reviewed before midnight UTC are processed in that day's batch.  Any submissions not reviewed before midnight UTC do not get processed until the following day.<br><br>Since Blue Coat&#39;s desktop client K9 and certain OEM partners update differently, ratings may differ from those of a Blue Coat SG as well as those present on the Site Review Tool.</td></tr></tbody></table></div>",
+  "categorization": "<a href=\"javascript:showPopupWindow('catdesc.jsp?catnum=55')\">Social Networking</a>",
+  "threatrisklevel": "Low",
+  "linkable": true
+}
