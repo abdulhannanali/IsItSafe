@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css" media="screen" title="no title" charset="utf-8">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
+
+    <!-- my styles -->
+    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-    <nav class="red light-green accent-4 ">
+    <nav id="navBar" class="light-green accent-4 ">
       <div class="nav-wrapper">
         <a href="/" class="brand-logo hide-on-med-and-down">Is It Safe?</a>
         <a href="/" class="brand-logo center"><i id="navThumb" class="material-icons">thumb_up</i></a>
@@ -30,12 +33,20 @@
           <label for="urlBox">Type or Paste the url here</label>
         </div>
       </div>
-      <div class="row">
+      <div id="progress">
+      </div>
+      <div class="row" id='errorBox'>
         <div class="col s12">
-          <p id="details">
-
-          </p>
+          <div class="card red">
+            <div class="card-content white-text">
+              <span class="card-title" id="errorTitleBox"><i class="material-icons">error</i> The following link was not found</span>
+              <p id="errorMessageBox"></p>
+            </div>
+          </div>
         </div>
+      </div>
+      <div id="siteInfo" class="row">
+
       </div>
     </div>
 

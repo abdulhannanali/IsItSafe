@@ -1,5 +1,5 @@
+var baseAPIUrl = "http://localhost:3000";
 var siteReview =  (function(){
-  var baseAPIUrl = "http://sitereview.bluecoat.com/rest/categorization";
 
   function reviewSite(url, cb) {
     postReview(url)
@@ -14,10 +14,7 @@ var siteReview =  (function(){
   function dataFormatify (data) {
     var urlObject = {};
     if (data) {
-      urlObject.url = data.url;
-      urlObject.unrated = data.unrated;
-      urlObject.threatLevel = data.threatrisklevel;
-      urlObject.categories = categoriesArray(data.categories);
+      urlObject.site = data.site;
     }
 
     return urlObject;
