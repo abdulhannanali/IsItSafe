@@ -6,8 +6,9 @@ var siteReview =  (function(){
       .done(function(data) {
         cb(null, dataFormatify(data));
       })
-      .fail(function(error) {
-        cb(error);
+      .fail(function(XMLHttpRequest, textStatus, errorThrown) {
+        console.log(XMLHttpRequest);
+        cb(XMLHttpRequest);
       });
   }
 

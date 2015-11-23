@@ -8,10 +8,10 @@
   $(document).ready(function(){
     errorBox(false);
     $("#urlBox").focusout(function(){
-      $("#siteInfo").empty();
-      errorBox(false);
       var currentValue = $("#urlBox").val();
       if (currentValue != previousValue) {
+        $("#siteInfo").empty();
+        errorBox(false);
         previousValue = currentValue;
         urlRequest(currentValue);
       }
@@ -19,17 +19,26 @@
   });
 
   function urlRequest (url) {
-    loadingRing(true);
+    indeterminateProgressBar(true);
     siteReview(url, function(error, data) {
-      loadingRing(false);
+      indeterminateProgressBar(false);
         if (error) {
-          if (error.status == 404) {
+          if (error.readyState == 0) {
+              errorBox(true, "<i class='material-icons'>error_outline</i> No network connection", "Sorry! We were unable to reach our servers.");
+          }
+          else if (error.status == 404) {
             errorBox(true, "<i class='material-icons'>error</i> " + url + " was not found in our database", "Sorry even though we are working hard to keep our database updated there are many links which are not yet in our database. This site will be reviewed very soon");
+            console.log(error);
           }
         }
         if (data) {
           navBarChange(true);
           colorCardGenerator($("#siteInfo"), "<i class='material-icons'>error</i> Site is not safe for anyone", "Open it at your own risk.", "red", "s12");
+          colorCardGenerator($("#siteInfo"), "DONT VIEW THIS Please!!!", "PORN Is Harmful! Don't open this site", "pink", "s12 m6" )
+
+          colorCardGenerator($("#siteInfo"), "NAH!!!", "<img alt='no' src='img/no.gif' class=' center-text img-responsive' width='240px' height='100px'></img>", "red", "s12 m6")
+          $("#noFapGuide").show();
+
         }
         else {
           navBarChange(false);
@@ -66,7 +75,7 @@
         .attr("class", "col s12");
 
     var cardPanel = $("<div>")
-      .addClass("card-panel blue col s12 m6")
+      .addClass("card-panel blue col s12 s12")
       .prepend($("<h3 class='card-title'>").text("Alexa Info!"))
 
     cardPanel.append(iframe);
@@ -77,7 +86,7 @@
     }
   }
 
-  function loadingRing (show) {
+  function indeterminateProgressBar (show) {
     if (show == true) {
       var progress = $("<div>")
         .addClass("progress")
@@ -162,7 +171,7 @@
 
     var cardParagraph =
       $("<p>")
-        .text(message)
+        .html(message)
 
     cardContent.append(cardTitle)
     cardContent.append(cardParagraph);
@@ -170,13 +179,13 @@
     card.append(cardContent)
 
     cols.append(card)
-    row.append(cols);
+    // row.append(cols);
 
-    $(tag).append(row);
+    $(tag).append(cols);
 
   }
 
   function emptySiteInfo () {
-    $("#siteInfo").empty();
+    $("#siteInfo").children().remove();
   }
 }());
