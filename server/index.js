@@ -5,12 +5,15 @@ var morgan = require("morgan");
 var colors = require("colors");
 
 var URL = require("url-parse");
+var cors = require("cors");
 
 var keys = require("./keys");
+
 var PornSite = require("./pornSiteModel");
 
 
 var app = express();
+
 mongoose.connect(keys.MONGO_DB_CONNECTION_URI, function() {
   console.log("Connection with MONGODB established" .green);
 })
@@ -18,6 +21,7 @@ mongoose.connect(keys.MONGO_DB_CONNECTION_URI, function() {
 
 app.use(morgan("dev", {}));
 
+app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
