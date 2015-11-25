@@ -12,6 +12,7 @@
       if (currentValue != previousValue) {
         $("#siteInfo").empty();
         errorBox(false);
+        faviconChanger(true);
         previousValue = currentValue;
         urlRequest(currentValue);
       }
@@ -27,21 +28,23 @@
               errorBox(true, "<i class='material-icons'>error_outline</i> No network connection", "Sorry! We were unable to reach our servers.");
           }
           else if (error.status == 404) {
-            errorBox(true, "<i class='material-icons'>error</i> " + url + " was not found in our database", "Sorry even though we are working hard to keep our database updated there are many links which are not yet in our database. This site will be reviewed very soon");
+            errorBox(true, "<i class='material-icons'>error</i> " + url + " was not found in our database", "Sorry this site is not in our almighty database.");
             console.log(error);
           }
         }
-        if (data) {
+        if (!data.safe) {
+          faviconChanger(false);
           navBarChange(true);
           colorCardGenerator($("#siteInfo"), "<i class='material-icons'>error</i> Site is not safe for anyone", "Open it at your own risk.", "red", "s12");
           colorCardGenerator($("#siteInfo"), "DONT VIEW THIS Please!!!", "PORN Is Harmful! Don't open this site", "pink", "s12 m6" )
 
-          colorCardGenerator($("#siteInfo"), "NAH!!!", "<img alt='no' src='img/no.gif' class=' center-text img-responsive' width='240px' height='100px'></img>", "red", "s12 m6")
+          colorCardGenerator($("#siteInfo"), "NAH!!!", "<img alt='no' src='img/no.gif' class='materialboxed center-text img-responsive' width='240px' height='100px'></img>", "red", "s12 m6")
           $("#noFapGuide").show();
 
         }
         else {
           navBarChange(false);
+          colorCardGenerator($("#siteInfo"), "<i class='material-icons'>check_circle</i> Site is safe ", "According to our information the site is safe to visit but any site can potentially contain adult content. So never forget to keep an eye on url.", "green", "s12")
         }
       alexaFrame(true, url);
     })
@@ -188,4 +191,27 @@
   function emptySiteInfo () {
     $("#siteInfo").children().remove();
   }
+
+  function faviconChanger (safe) {
+    var baseLocation = "img/icons/"
+    var icons = [
+      "thumbs-up-icon.png",
+      "thumbs-down-icon.png"
+   ]
+
+   if (safe) {
+     $("#favicon").attr("href", baseLocation + icons[0]);
+   }
+   else {
+     $("#favicon").attr("href", baseLocation + icons[1]);
+   }
+
+
+  }
+
+
+  // material plugins initialization
+  $(document).ready(function(){
+    $(".materialboxed").materialbox();
+  })
 }());
